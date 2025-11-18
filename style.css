@@ -15,17 +15,25 @@ body {
 /* HERO SECTION */
 .hero {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-.hero video.bg-video {
+.hero-video-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  border: none;
   object-fit: cover;
   opacity: 0.45;
 }
@@ -36,6 +44,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 1;
 }
 
 .hero-text h1 {

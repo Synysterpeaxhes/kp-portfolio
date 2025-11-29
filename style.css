@@ -1,315 +1,371 @@
-/* CINEMATIC PORTFOLIO STYLE.CSS */
-
+/* =========================================
+   GLOBAL STYLES & RESETS
+   ========================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #000;
-  color: #fff;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
 }
 
-/* HERO SECTION */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.bg-video {
-  width: 100%;
-  height: 100%;
-  border: none;
-  object-fit: cover;
-  opacity: 0.45;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
-}
-
-.hero-text h1 {
-  font-size: 4rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.4rem;
-  opacity: 0.8;
-}
-
-.hero-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  color: #fff;
-  text-decoration: none;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
-
-.hero-button:hover {
-  background: #fff;
-  color: #000;
-}
-
-
-/* SECTIONS */
-section {
-  padding: 80px 8%;
-}
-
-h2 {
-  font-size: 2.4rem;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* PROJECTS */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  transition: 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-}
-
-.project-card iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 6px;
-  border: none;
-  margin-bottom: 10px;
-}
-/* ABOUT */
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.about-image {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 0 20px rgba(255,255,255,0.1);
-  transition: 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255,0,0,0.3);
-}
-
-/* CONTACT */
-.contact p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-/* Scroll animation classes */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* PROJECT CARD ENHANCEMENTS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #000;
-  color: #fff;
-  line-height: 1.6;
-}
-
-/* HEADER / NAVIGATION */
+/* =========================================
+   HEADER / NAVIGATION
+   ========================================= */
 header {
-  width: 100%;
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0,0,0,0.85);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
 header .logo {
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
 }
 
 header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s ease;
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
 header nav a:hover,
 header nav a.active {
-  color: #f00; /* cinematic red accent */
+    color: #f00; /* Cinematic Red */
 }
 
-/* PAGE TITLE */
+/* =========================================
+   HERO SECTION (For Index.html)
+   ========================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+    opacity: 0.45;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* =========================================
+   WORKS PAGE STYLES
+   ========================================= */
 .page-title {
-  text-align: center;
-  padding: 80px 8px 40px 8px;
+    text-align: center;
+    padding: 100px 20px 40px;
 }
 
 .page-title h1 {
-  font-size: 3rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
-.page-title p {
-  font-size: 1.2rem;
-  opacity: 0.8;
+/* Category Filter Buttons */
+.category-filter {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* WORKS GRID */
+.category-filter button {
+    padding: 10px 25px;
+    margin: 5px;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 30px;
+    color: #aaa;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+    background: #f00;
+    border-color: #f00;
+    color: #fff;
+}
+
+/* Grid Layout */
 .works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  padding: 0 8%;
-  margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0 8%;
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* WORK CARD */
+/* Fade out effect for filtering */
+.works-grid.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Work Card */
 .work-card {
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(255,255,255,0.05);
-  transition: 0.4s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding-bottom: 15px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .work-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255,0,0,0.3); /* cinematic red glow */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+}
+
+.work-card .thumbnail {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #222;
+    transition: opacity 0.3s;
+}
+
+.work-card:hover .thumbnail {
+    opacity: 0.8;
+}
+
+.work-card .card-info {
+    padding: 20px;
 }
 
 .work-card h3 {
-  font-size: 1.4rem;
-  margin: 15px 0 10px 0;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.work-card iframe {
-  width: 100%;
-  border-radius: 8px;
-  border: none;
-  transition: 0.3s ease;
-  margin-bottom: 10px;
+.work-card p {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
 }
 
-/* DETAILS BUTTON */
-.details-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 18px;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s ease;
+/* =========================================
+   PROJECTS, ABOUT, CONTACT STYLES - NEW
+   ========================================= */
+
+/* General Section Spacing */
+.projects, .about, .contact {
+    padding: 80px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.details-btn:hover {
-  background: #fff;
-  color: #000;
+.projects h2, .about h2, .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
-/* RESPONSIVE EMBEDS FOR INSTAGRAM/TIKTOK */
-.work-card blockquote.instagram-media,
-.work-card iframe[src*="tiktok.com"] {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto;
+/* --- ABOUT SECTION FIX --- */
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start; /* Align content to the top */
 }
 
-/* SCROLL ANIMATION */
+.about-text {
+    flex-grow: 1; /* Allows text to take up available space */
+    font-size: 1.1rem;
+}
+
+/* Image Constraint Fix */
+.about-image {
+    flex-shrink: 0; /* Prevents image container from shrinking */
+    width: 300px; /* Set a specific width for the image container */
+    border-radius: 15px; /* Optional: adds a nice curve to corners */
+    overflow: hidden; /* Ensures the image respects the border-radius */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Optional: adds shadow */
+}
+
+.about-image img {
+    width: 100%; /* Makes the image fit its 300px container */
+    height: auto;
+    display: block;
+}
+
+/* --- CONTACT SECTION --- */
+.contact p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks image and text vertically */
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .about-image {
+        width: 80%; /* Image takes up most of the screen width */
+        max-width: 300px; /* But doesn't get too large */
+    }
+    
+    .projects, .about, .contact {
+        padding: 50px 5%;
+    }
+}
+
+
+/* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
 .hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
 .show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   VIDEO MODAL (POPUP) STYLES - NEW
+   ========================================= */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000; /* On top of header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Darker overlay */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 40px 10px 10px;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #f00;
+}
+
+#modal-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+    background: #000;
+}
+
+/* Responsive adjustment for modal */
+@media (max-width: 768px) {
+    #modal-video-container {
+        min-height: 250px;
+    }
+    .modal-content {
+        width: 95%;
+    }
 }

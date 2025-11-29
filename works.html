@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Works</title>
 
-    <!-- Link to your existing CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Instagram + TikTok embed scripts -->
     <script async src="https://www.instagram.com/embed.js"></script>
     <script async src="https://www.tiktok.com/embed.js"></script>
 </head>
 
 <body>
 
-    <!-- Header -->
     <header class="header">
         <a href="index.html" class="logo">My Portfolio</a>
         <nav>
@@ -24,162 +21,187 @@
         </nav>
     </header>
 
-    <!-- Page Title -->
     <section class="page-title">
         <h1>My Works</h1>
         <p>A collection of my editing, cinematography, and storytelling projects.</p>
     </section>
 
-    <!-- Works Grid -->
-    <section class="works-grid">
+    <section class="category-filter">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="cinematic">Cinematic</button>
+        <button class="filter-btn" data-category="podcast">Podcast</button>
+        <button class="filter-btn" data-category="social">Social</button>
+    </section>
 
-        <!-- Google Drive Showreel -->
-        <div class="work-card">
-            <h3>Showreel</h3>
-            <iframe src="https://drive.google.com/file/d/1f7MM7bODFeFkia07lrWn92dOVMvTpeoY/preview"
-                    width="100%" height="315" allow="autoplay"></iframe>
+   <section class="works-grid" id="worksGrid">
+
+        <div class="work-card" data-category="cinematic" data-type="drive" data-id="1f7MM7bODFeFkia07lrWn92dOVMvTpeoY">
+            <img class="thumbnail" src="https://drive.google.com/thumbnail?id=1f7MM7bODFeFkia07lrWn92dOVMvTpeoY" alt="Harbinger House Trailer"/>
+            <div class="card-info">
+                <h3>Harbinger House (Trailer)</h3>
+                <p>Official trailer of Harbinger House stageplay project.</p>
+            </div>
         </div>
 
-        <!-- Instagram video -->
-        <div class="work-card">
-            <h3>Instagram Edit</h3>
-            <blockquote 
-                class="instagram-media" 
-                data-instgrm-permalink="https://www.instagram.com/p/DMX3ORrhd4N/"
-                data-instgrm-version="14"
-                style="background:white; width:100%; margin:0 auto;">
-            </blockquote>
+        <div class="work-card" data-category="cinematic" data-type="youtube" data-id="L_MOTl_8qBk">
+            <img class="thumbnail" src="https://img.youtube.com/vi/L_MOTl_8qBk/maxresdefault.jpg" alt="Harbinger House Teaser"/>
+            <div class="card-info">
+                <h3>Harbinger House Teaser</h3>
+                <p>Teaser for the Harbinger House project.</p>
+            </div>
         </div>
 
-        <!-- YouTube Examples -->
-        <div class="work-card">
-            <h3>YouTube Project 1</h3>
+        <div class="work-card" data-category="cinematic" data-type="youtube" data-id="PcGk7EnLeuo">
+            <img class="thumbnail" src="https://img.youtube.com/vi/PcGk7EnLeuo/maxresdefault.jpg" alt="Greedy Short Film"/>
+            <div class="card-info">
+                <h3>Greedy</h3>
+                <p>A short film fully directed, shot, and edited by me.</p>
+            </div>
+        </div>
+
+          <div class="work-card" data-category="podcast" data-type="drive" data-id="1v--FbPp8SNvcA6YhiaUMveurs_rqaQI1">
+            <img class="thumbnail" src="images/podcast_ep1.png" onerror="this.src='https://placehold.co/600x400?text=Podcast+EP1'" alt="Podcast Ep 1"/>
+            <div class="card-info">
+                <h3>Welcome In Podcast EP.1</h3>
+                <p>"The Spark" Talk about the start of the Savedsoulsfoudation and promote to Thai people.</p>
+            </div>
+        </div>
+
+        <div class="work-card" data-category="podcast" data-type="drive" data-id="1APcUR35B-ELIXuzZpYLYjW_fmx3RZmrW">
+            <img class="thumbnail" src="images/podcast_ep2.png" onerror="this.src='https://placehold.co/600x400?text=Podcast+EP2'" alt="Podcast Ep 2"/>
+            <div class="card-info">
+                <h3>Welcome In Podcast EP.2</h3>
+                <p>"Going Live" Talk about behind the scene during shooting progress at Savedsoulsfoudation</p>
+            </div>
+        </div>
+
+        <div class="work-card" data-category="podcast" data-type="drive" data-id="19cev3IkqnLWi50g6T7hX6AU_SDT3b-No">
+            <img class="thumbnail" src="images/podcast_ep3.png" onerror="this.src='https://placehold.co/600x400?text=Podcast+EP3'" alt="Podcast Ep 3"/>
+            <div class="card-info">
+                <h3>Welcome In Podcast EP.3</h3>
+                <p>"Beyond the Fence" Talk with Melanie the caretaker and manager of Savedsoulsfoudation</p>
+            </div>
+        </div>
+
+        <div class="work-card" data-category="social">
             <iframe 
-                    width="100%" 
-                    height="315"
-                    src="https://www.youtube.com/embed/L_MOTl_8qBk"
-                    title="YouTube video"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media; fullscreen"
-                    allowfullscreen>
+                src="https://www.instagram.com/reel/DMX3ORrhd4N/embed/" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>Road To MC (Instagram Reel)</h3>
+                <p>Instagram promotional edit.</p>
+            </div>
         </div>
 
-        <div class="work-card">
-             <h3>YouTube Project 2</h3>
-                <iframe 
-                    width="100%" 
-                    height="315"
-                    src="https://www.youtube.com/embed/PcGk7EnLeuo"
-                    title="YouTube video"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media; fullscreen"
-                    allowfullscreen>
-                </iframe>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7485168037885201682" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
+            </iframe>
+            <div class="card-info">
+                <h3>Eat with Shuya</h3>
+                <p>Food content edited for Shuya.</p>
+            </div>
         </div>
 
-
-        <!-- TikTok Videos -->
-        <div class="work-card">
-            <h3>TikTok Project 1</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7485168037885201682"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7470808058160057618" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>Shuya vs Indian Food</h3>
+                <p>Shuya trying Indian food for the first time.</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 2</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7470808058160057618"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7465213081124211976" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>E-Sarn Food</h3>
+                <p>Shuya testing local Thai food.</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 3</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7465213081124211976"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+         <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7523817668500131090" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>TORA PROJECT 2nd Showcase</h3>
+                <p>Basketproject's short performance video promote on TikTok</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 4</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7523817668500131090"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+         <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7524651371635739912" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>EP.3 เป็นเด็กฝึกค่ายญี่ปุ่น ไปญี่ปุ่น 1 อาทิตย์ทำอะไรบ้าง?</h3>
+                <p>Basketproject Japan Vlog</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 5</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7524651371635739912"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7525403994890439943" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>Basketproject Idol Exchange Short performance</h3>
+                <p>Basketproject performance on Idol Exchange</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 6</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7525403994890439943"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7526469517816433938" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>"To The Sky Hight" MV Reaction</h3>
+                <p>MV reaction and subtitle on comment segment at the end.</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 7</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7526469517816433938"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7536948833897499912" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
+            <div class="card-info">
+                <h3>"AFA Creators Super Fest" Thank you!</h3>
+                <p>Singapore Event thank you video and show some of their performance</p>
+            </div>
         </div>
 
-        <div class="work-card">
-            <h3>TikTok Project 8</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7536948833897499912"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
+        <div class="work-card" data-category="social">
+            <iframe 
+                src="https://www.tiktok.com/embed/v2/7539551550365076754" 
+                width="100%" height="450" style="border:none; overflow:hidden" scrolling="no" allowtransparency="true" allow="encrypted-media">
             </iframe>
-        </div>
-
-        <div class="work-card">
-            <h3>TikTok Project 9</h3>
-            <iframe
-                src="https://www.tiktok.com/embed/7539551550365076754"
-                width="100%"
-                height="600"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+            <div class="card-info">
+                <h3>Poom Finalist from Basketproject 2nd gen</h3>
+                <p>Short introduce video member from Basketproject 2nd gen.(I did all of their introduction video on TikTok accound but I choose the most viewer one.)</p>
+            </div>
         </div>
 
     </section>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-video-container">
+                </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 

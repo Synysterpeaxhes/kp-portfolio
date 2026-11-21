@@ -8,7 +8,7 @@ import shortElements from "@/public/images/short-elements.webp";
 import shortKali from "@/public/images/short-kali.webp";
 import shortMoneyLeak from "@/public/images/short-money-leak.webp";
 
-export type Category = "luxury" | "cinematic" | "podcast" | "variety" | "short";
+export type Category = "review" | "luxury" | "cinematic" | "podcast" | "variety" | "short";
 
 export type Source =
   | { kind: "youtube"; id: string }
@@ -34,6 +34,7 @@ export interface Work {
  * play in place; the others use 16:9 cards that open a player dialog.
  */
 export const categories: { id: Category; label: string; vertical: boolean }[] = [
+  { id: "review", label: "Product Review", vertical: false },
   { id: "luxury", label: "Luxury Cinematic", vertical: true },
   { id: "cinematic", label: "Trailer & Teaser", vertical: false },
   { id: "podcast", label: "Podcast", vertical: false },
@@ -48,6 +49,19 @@ const driveThumb = (id: string) => `https://drive.google.com/thumbnail?id=${id}&
 // Selection supplied by the site owner on 2026-11-15. Of the earlier works only
 // the two Harbinger House pieces were kept.
 export const works: Work[] = [
+  // Product review (added 2026-11-21). Owner did storyline, pacing, edit, motion graphics,
+  // colour grading, voice-over, SFX and BGM.
+  {
+    slug: "mybest-whitening-toothpaste",
+    title: "ยาสีฟันไวท์เทนนิ่ง ยี่ห้อไหนดี? ทดสอบ 10 แบรนด์",
+    description:
+      "mybest Thailand · Product Review 8 นาที วางโครงเรื่อง จัด Pace ตัดต่อ Motion Graphics เกรดสี พากย์เสียง SFX และ BGM",
+    category: "review",
+    source: { kind: "youtube", id: "nMibBQgaAYk" },
+    thumbnail: yt("nMibBQgaAYk"),
+    featured: true,
+  },
+
   // Harbinger House (stage play)
   {
     slug: "harbinger-house-trailer",
@@ -133,7 +147,6 @@ export const works: Work[] = [
     category: "podcast",
     source: { kind: "youtube", id: "MHxF7WgWnT0" },
     thumbnail: yt("MHxF7WgWnT0"),
-    featured: true,
   },
 
   // Variety (YouTube)

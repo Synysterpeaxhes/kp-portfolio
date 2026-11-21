@@ -211,7 +211,7 @@ works.push(
   {
     slug: "bte-mybest",
     title: "Behind the Edit — mybest Product Review",
-    description: "Timeline 13 video / 16 audio tracks · Motion, เกรดสี, พากย์เสียง, SFX และ BGM (ตัวอย่าง 60 วินาที)",
+    description: "Timeline 13 video / 16 audio tracks · Motion, เกรดสี, พากย์เสียง, SFX และ BGM · Preview 30 วินาที",
     category: "bte",
     source: { kind: "file", src: "/videos/bte/bte-mybest.mp4" },
     thumbnail: bteMybest,
@@ -219,7 +219,7 @@ works.push(
   {
     slug: "bte-ka-3-countries",
     title: "Behind the Edit — K A Luxury Travel",
-    description: "3 Countries · 10 Days · Timeline 12 video / 14 audio tracks · หา Footage, ตัดต่อ และ Color Grading เอง",
+    description: "3 Countries · 10 Days · Timeline 12 video / 14 audio tracks · หา Footage, ตัดต่อ และ Color Grading เอง · Preview 30 วินาที",
     category: "bte",
     source: { kind: "file", src: "/videos/bte/bte-ka.mp4" },
     thumbnail: bteKa,
@@ -227,7 +227,7 @@ works.push(
   {
     slug: "bte-aasb-podcast",
     title: "Behind the Edit — AASB Podcast",
-    description: "EP.3 · Timeline 11 video / 14 audio tracks · Sync หลายกล้อง, Color และ Motion Graphics",
+    description: "EP.3 · Timeline 11 video / 14 audio tracks · Sync หลายกล้อง, Color และ Motion Graphics · Preview 30 วินาที",
     category: "bte",
     source: { kind: "file", src: "/videos/bte/bte-podcast.mp4" },
     thumbnail: btePodcast,
@@ -235,7 +235,7 @@ works.push(
   {
     slug: "bte-aasb-reels",
     title: "Behind the Edit — AASB Reels",
-    description: "EP.4 · 8 Reels จากตอนเดียว · ซับไตเติล กราฟิก และ Motion หลายเลเยอร์",
+    description: "EP.4 · 8 Reels จากตอนเดียว · ซับไตเติล กราฟิก และ Motion หลายเลเยอร์ · Preview 30 วินาที",
     category: "bte",
     source: { kind: "file", src: "/videos/bte/bte-reels.mp4" },
     thumbnail: bteReels,

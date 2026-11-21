@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 import { useState } from "react";
 import { embedUrl, type Work } from "@/lib/works";
 
-const platformName = { youtube: "YouTube", drive: "Google Drive", tiktok: "TikTok", instagram: "Instagram" };
+const platformName = { youtube: "YouTube", drive: "Google Drive", tiktok: "TikTok", instagram: "Instagram", file: "Video" };
 
 /**
  * Vertical (9:16) card for TikTok / Instagram work.

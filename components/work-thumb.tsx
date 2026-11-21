@@ -14,7 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { categories, embedUrl, externalUrl, type Work } from "@/lib/works";
 
-const platformName = { youtube: "YouTube", drive: "Google Drive", tiktok: "TikTok", instagram: "Instagram" };
+const platformName = { youtube: "YouTube", drive: "Google Drive", tiktok: "TikTok", instagram: "Instagram", file: "" };
 
 /**
  * 16:9 work card (cinematic / podcast). Clicking opens the player in a dialog;
@@ -89,7 +89,17 @@ export function WorkThumb({ work, rowOnMobile = false }: { work: Work; rowOnMobi
             </DialogClose>
           </div>
           <div className="aspect-video w-full bg-black">
-            {open && (
+            {open && work.source.kind === "file" && (
+              <video
+                src={embedUrl(work.source)}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+                className="size-full bg-black"
+              />
+            )}
+            {open && work.source.kind !== "file" && (
               <iframe
                 src={embedUrl(work.source, true)}
                 title={work.title}
@@ -101,15 +111,17 @@ export function WorkThumb({ work, rowOnMobile = false }: { work: Work; rowOnMobi
           </div>
           <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-start sm:justify-between">
             <DialogDescription className="min-w-0 text-sm">{work.description}</DialogDescription>
-            <a
-              href={externalUrl(work.source)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
-            >
-              Open on {platformName[work.source.kind]}
-              <ExternalLink className="size-3.5" aria-hidden />
-            </a>
+            {work.source.kind !== "file" && (
+              <a
+                href={externalUrl(work.source)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-10 shrink-0 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+              >
+                Open on {platformName[work.source.kind]}
+                <ExternalLink className="size-3.5" aria-hidden />
+              </a>
+            )}
           </div>
         </DialogContent>
       </Dialog>

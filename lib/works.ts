@@ -1,4 +1,8 @@
 import type { StaticImageData } from "next/image";
+import bteKa from "@/public/images/bte-ka.webp";
+import bteMybest from "@/public/images/bte-mybest.webp";
+import btePodcast from "@/public/images/bte-podcast.webp";
+import bteReels from "@/public/images/bte-reels.webp";
 import ka3Countries from "@/public/images/ka-3-countries.webp";
 import kaExplora from "@/public/images/ka-explora-journeys.webp";
 import kaMediterranean from "@/public/images/ka-mediterranean.webp";
@@ -8,13 +12,18 @@ import shortElements from "@/public/images/short-elements.webp";
 import shortKali from "@/public/images/short-kali.webp";
 import shortMoneyLeak from "@/public/images/short-money-leak.webp";
 
-export type Category = "review" | "luxury" | "cinematic" | "podcast" | "variety" | "short";
+export type Category = "review" | "luxury" | "cinematic" | "podcast" | "variety" | "short" | "bte";
 
 export type Source =
   | { kind: "youtube"; id: string }
   | { kind: "drive"; id: string }
   | { kind: "tiktok"; id: string }
-  | { kind: "instagram"; id: string };
+  | { kind: "instagram"; id: string }
+  /** Video hosted with the site, under public/ (path without the base path). */
+  | { kind: "file"; src: string };
+
+/** URL of a file in public/, with the GitHub Pages base path in front. */
+export const asset = (p: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${p}`;
 
 export interface Work {
   /** Stable key, also used for React keys. */
@@ -40,6 +49,7 @@ export const categories: { id: Category; label: string; vertical: boolean }[] = 
   { id: "podcast", label: "Podcast", vertical: false },
   { id: "variety", label: "Variety", vertical: false },
   { id: "short", label: "Short-form", vertical: true },
+  { id: "bte", label: "Behind the Edit", vertical: false },
 ];
 
 const yt = (id: string) => `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
@@ -195,6 +205,43 @@ export const works: Work[] = [
   },
 ];
 
+// Behind the Edit: Premiere Pro timeline beside the final cut, one per category
+// (owner's choice 2026-11-21; TCEB pieces are left out). Videos live in public/videos/bte.
+works.push(
+  {
+    slug: "bte-mybest",
+    title: "Behind the Edit — mybest Product Review",
+    description: "Timeline 13 video / 16 audio tracks · Motion, เกรดสี, พากย์เสียง, SFX และ BGM (ตัวอย่าง 60 วินาที)",
+    category: "bte",
+    source: { kind: "file", src: "/videos/bte/bte-mybest.mp4" },
+    thumbnail: bteMybest,
+  },
+  {
+    slug: "bte-ka-3-countries",
+    title: "Behind the Edit — K A Luxury Travel",
+    description: "3 Countries · 10 Days · Timeline 12 video / 14 audio tracks · หา Footage, ตัดต่อ และ Color Grading เอง",
+    category: "bte",
+    source: { kind: "file", src: "/videos/bte/bte-ka.mp4" },
+    thumbnail: bteKa,
+  },
+  {
+    slug: "bte-aasb-podcast",
+    title: "Behind the Edit — AASB Podcast",
+    description: "EP.3 · Timeline 11 video / 14 audio tracks · Sync หลายกล้อง, Color และ Motion Graphics",
+    category: "bte",
+    source: { kind: "file", src: "/videos/bte/bte-podcast.mp4" },
+    thumbnail: btePodcast,
+  },
+  {
+    slug: "bte-aasb-reels",
+    title: "Behind the Edit — AASB Reels",
+    description: "EP.4 · 8 Reels จากตอนเดียว · ซับไตเติล กราฟิก และ Motion หลายเลเยอร์",
+    category: "bte",
+    source: { kind: "file", src: "/videos/bte/bte-reels.mp4" },
+    thumbnail: bteReels,
+  },
+);
+
 /** Embed URL for the in-page player. Autoplay only for click-to-play players. */
 export function embedUrl(source: Source, autoplay = false): string {
   switch (source.kind) {
@@ -206,6 +253,8 @@ export function embedUrl(source: Source, autoplay = false): string {
       return `https://www.tiktok.com/player/v1/${source.id}?description=0&music_info=0&rel=0`;
     case "instagram":
       return `https://www.instagram.com/p/${source.id}/embed/`;
+    case "file":
+      return asset(source.src);
   }
 }
 
@@ -220,5 +269,7 @@ export function externalUrl(source: Source): string {
       return `https://www.tiktok.com/@tiktok/video/${source.id}`;
     case "instagram":
       return `https://www.instagram.com/p/${source.id}/`;
+    case "file":
+      return asset(source.src);
   }
 }
